@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Unicycle Robot Path Planning </title>
+    <style>
+		body {font-family: verdana, sans-serif;}
+        canvas {border: 1px solid black;}
+        #workspace {position: relative; float: left;}
+        #controls {position: relative; float: right;}
+    </style>
+  </head>
+  <body>
+      <header>
+          <h1>Unicycle Robot Path Planning</h1>
+      </header>
+      <section id="canvas">
+          <canvas id="workspace" width="300" height="300">
+              <h2> I'm sorry! </h2>
+              <p> Your browser do not support canvas! Please, update!</p>
+          </canvas>
+      </section>
+      <section id="controls">
+          <form>
+			<fieldset>
+			  <legend>Initial Position</legend>
+			  <p><label> 
+				X
+				<input type="number" min="0" max="300" step="1" value="50" name="xin" id="xin">
+			  </label></p>
+			  <p><label>
+				Y
+				<input type="number" min="0" max="300" step="1" value="50" name="yin" id="yin">
+			  </label></p>
+			  <p><label>
+				Theta
+				<input type="number" value="0" name="thetain" id="thetain">
+			  </label></p>
+			</fieldset>
+			<fieldset>
+			  <legend>Final Position</legend>
+			  <p><label> 
+				X
+				<input type="number" min="0" max="300" step="1" value="250" name="xfin" id="xfin">
+			  </label></p>
+			  <p><label>
+				Y
+				<input type="number" min="0" max="300" step="1" value="250" name="yfin" id="yfin">
+			  </label></p>
+			  <p><label>
+				Theta
+				<input type="number" value="0" name="thetafin" id="thetafin">
+			  </label></p>
+			</fieldset>
+			<p><label>K <input type="number" value="1000" name="k" id="k"></label></p>
+			<input type="button" name="calculate" value="Do Computation!" onclick="updatePath()">			
+          </form>
+      </section>
+      <script src="planning.js"></script>
+  </body>
+</html>

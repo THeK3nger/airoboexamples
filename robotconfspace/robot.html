@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> Workspace and Configuration Space </title>
+    <style>
+    #graphic { position: absolute; width: 700px; }
+    #workspace_section { position: relative; float: left;}
+    #confspace_section { position: relative; float: right;}
+    #control { position: fixed; bottom: 0px;}
+    canvas { border: 1px solid black; }
+    body  {font-family: Verdana, sans-serif; }
+    </style>
+  </head>
+  <body>
+    <header>
+    <h1> Workspace and Configuration Space</h1>
+    <p> Click and drag on the right square to change robot configuration. </p>
+    <p> You can also change box parameters. </p>
+    </header>
+    <section id="graphic">
+      <section id="workspace_section">
+        <canvas id="workspace" width="300" height="300"></canvas>
+      </section>
+      <section id="confspace_section">
+        <canvas id="confspace" width="300" height="300"></canvas>
+      </section>
+    </section>
+    <section id="control">
+      <form method="post" action=".">
+        <p>
+          <label for="x"> Box X: </label>
+          <input type="text" value="50" id="x" name="x"/>
+
+          <label for="y"> Box Y: </label>
+          <input type="text" value="50" id="y" name="y"/>
+
+          <label for="y"> Size: </label>
+          <input type="text" value="80" id="size" name="size"/>
+
+          <input type="button" value="Update" id="update" name="update" onclick="updateBlock()"/>
+        </p>
+      </form>
+    </section>
+    <script src="workconf.js"></script>
+  </body>
+</html>
